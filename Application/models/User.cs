@@ -1,3 +1,6 @@
+using Models.Accounts;
+using Models.Phones;
+
 namespace Models.Users;
 
 // создал базовый класс от которого будут наследоваться клиент и админ
@@ -18,7 +21,8 @@ public class Client : User
     public string MiddleName {get; set;} = null!;
     public string Email { get; set; } = null!;
     public DateOnly BirthDate { get; set; }
-
+    public List<Phone?> Phones {get; set;} = new List<Phone?>(); // у клиента может быть несколько телефонов
+    public List<Account?> Accounts {get; set;} = new List<Account?>(); // у клиента может быть несколько счетов
     public Client(
         string firstName, 
         string lastName, 

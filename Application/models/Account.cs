@@ -1,9 +1,15 @@
+using Models.Cards;
+using Models.Users;
 namespace Models.Accounts;
 
-public class Accoiunt
+public class Account
 {
     public Guid Id {get; init;} = Guid.NewGuid();
-    public string AccountNumber {get; private set;} = null!;
-    public string Currency {get; private set;} = null!;
-    public decimal Balance {get; private set;} = 0;
+    public string AccountNumber {get; set;} = null!;
+    public string Currency {get; set;} = null!;
+    public decimal Balance {get; set;} = 0;
+    public bool IsActive {get; set;} // возможность блокировки счета
+    public Guid ClientId {get; set;} // связь с клиентом
+    public Client Client {get; set;} = null!;
+    public List<Card?> Cards {get; set;} = new List<Card?>(); // у счета может быть несколько карт
 }
