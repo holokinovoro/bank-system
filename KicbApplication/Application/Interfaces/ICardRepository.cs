@@ -11,4 +11,5 @@ public interface ICardRepository
     Task<List<Card>> GetCardsByAccountIdAsync(Guid accountId);
     Task UpdateCardAsync(Card card);
     Task BlockCardAsync(Guid cardId);
+    Task UnBlockCardAsync(Guid cardId);
 }

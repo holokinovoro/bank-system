@@ -115,6 +115,11 @@ public class CardService : ICardService
         await _cardRepository.BlockCardAsync(cardId);
     }
 
+    public async Task UnBlockCardAsync(Guid cardId)
+    {
+        await _cardRepository.UnBlockCardAsync(cardId);
+    }
+
     public async Task DeleteCardAsync(Guid cardId)
     {
         await _cardRepository.DeleteCardAsync(cardId);

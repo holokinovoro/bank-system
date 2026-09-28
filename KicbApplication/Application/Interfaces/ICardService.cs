@@ -6,6 +6,7 @@ namespace Application.Interfaces;
 public interface ICardService
 {
     Task BlockCardAsync(Guid cardId);
+    Task UnBlockCardAsync(Guid cardId);
     Task<CreateCardResponse> CreateCardAsync(CreateCardRequest request);
     Task DeleteCardAsync(Guid cardId);
     Task<List<GetCardResponse>> GetAllCardsAsync();

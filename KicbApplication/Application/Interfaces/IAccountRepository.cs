@@ -10,4 +10,5 @@ public interface IAccountRepository
     Task<List<Account>> GetAccountsByClientIdAsync(Guid clientId);
     Task<List<Account>> GetAllAccountsAsync();
     Task UpdateAccountAsync(Account account);
+    Task CloseAccountAsync(Guid accountId);
 }

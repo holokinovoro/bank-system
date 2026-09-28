@@ -3,8 +3,8 @@ using Domain.Models.Cards;
 public record UpdateCardRequest
 {
     public Guid Id { get; set; }
-    public string? CardNumber { get; init; }
-    public DateOnly? ExpirationDate { get; init; }
-    public CardType Type { get; init; }
-    public bool IsActive { get; init; }
+    public string? CardNumber { get; set; }
+    public DateOnly? ExpirationDate { get; set; }
+    public CardType Type { get; set; }
+    public bool IsActive { get; set; }
 }

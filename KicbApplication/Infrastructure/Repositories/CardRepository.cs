@@ -76,6 +76,17 @@ public class CardRepository : ICardRepository
         }
     }
 
+    public async Task UnBlockCardAsync(Guid cardId)
+    {
+        var card = await _context.Cards.FindAsync(cardId);
+        if (card != null)
+        {
+            card.IsActive = true;
+            _context.Cards.Update(card);
+            await _context.SaveChangesAsync();
+        }
+    }
+
     public async Task DeleteCardAsync(Guid cardId)
     {
         var card = await _context.Cards.FindAsync(cardId);
